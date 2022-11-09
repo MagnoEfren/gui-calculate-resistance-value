@@ -1,6 +1,5 @@
 import sys
 from GUI import *
-
 class MiApp(QtWidgets.QMainWindow):
 	def __init__(self):
 		super().__init__()
@@ -86,8 +85,7 @@ class MiApp(QtWidgets.QMainWindow):
 			self.valor1 = 8
 		elif valor1 =="Blanco":
 			self.ui.label1.setStyleSheet("background-color: rgb(0, 0, 0)")
-			self.valor1 = 9
-			
+			self.valor1 = 9			
 	def seleccion2(self):
 		valor2 = self.ui.selec2.currentText()
 		if valor2=="Negro":
@@ -172,7 +170,6 @@ class MiApp(QtWidgets.QMainWindow):
 			self.ui.label4.setStyleSheet("background-color: rgb(255, 0, 0)")
 			self.valor4 = 0.02
 			self.Tol = "2%"
-
 	def obtener_Resultado(self):
 		ValorG = str((self.valor1)) + str((self.valor2))
 		X = float(self.valor3)
@@ -185,10 +182,9 @@ class MiApp(QtWidgets.QMainWindow):
 		self.ui.resultado.setText(str(ValorTT))
 		self.ui.tolerancia.setText(str(self.Tol))
 		self.ui.maximo.setText(str(VmaxF))
-		self.ui.minimo.setText(str(VminF))
-		
+		self.ui.minimo.setText(str(VminF))		
 if __name__ == "__main__":
      app = QtWidgets.QApplication(sys.argv)
      mi_app = MiApp()
      mi_app.show()
-     sys.exit(app.exec_())		
+     sys.exit(app.exec_())
